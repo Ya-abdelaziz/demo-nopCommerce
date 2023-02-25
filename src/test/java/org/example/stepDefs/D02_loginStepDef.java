@@ -30,18 +30,11 @@ public class D02_loginStepDef {
        { login.URL();
          login.myAccountTab();}
 
-    @Given("user go to login page")
-    public void clickLogin()
-    { login.clickOnLoginButton(); }
-
     @When("user login with \"invalid\" email \"wrong@example.com\" and password \"P@ssw0rd\"")
     public void EnterInValidEmailAndPassword()
     { login.enterEmail().sendKeys("wrong@example.com");
         login.enterPassword().sendKeys("P@ssw0rd"); }
 
-    @And("user press on login button")
-    public void clickOnLogin()
-    { login.pressLoginButton(); }
 
     @Then("user could not login to the system")
     public void loginUnsuccessfully()

@@ -48,7 +48,8 @@ public class D01_registerStepDef {
       @Then("success message is displayed")
         public void successMessageAppear()
          { softAssert.assertTrue(register.successMessage().getText().contains("Your registration completed"));
-           softAssert.assertEquals(register.successMessage().getCssValue("color"),"rgb(76,177,124)");
+
+           register.ColorOfSuccessMessage();
            softAssert.assertAll();
          }
 
