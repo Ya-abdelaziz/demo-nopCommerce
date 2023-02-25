@@ -17,7 +17,7 @@ public class D02_loginStepDef {
        { login.clickOnLoginButton(); }
 
     @When("user login with \"valid\" email \"test@example.com\" and password \"P@ssw0rd\"")
-      public void EnterEmailAndPassword()
+      public void EnterValidEmailAndPassword()
         { login.enterEmail().sendKeys("test@example.com");
           login.enterPassword().sendKeys("P@ssw0rd"); }
 
@@ -30,9 +30,24 @@ public class D02_loginStepDef {
        { login.URL();
          login.myAccountTab();}
 
-   @Then("user could not login to the system")
-     public void loginUnsuccessfully()
-       { softAssert.assertTrue(login.errorMessage().getText().contains("Login was unsuccessful"));
-         login.errorColor();}
+    @Given("user go to login page")
+    public void clickLogin()
+    { login.clickOnLoginButton(); }
+
+    @When("user login with \"invalid\" email \"wrong@example.com\" and password \"P@ssw0rd\"")
+    public void EnterInValidEmailAndPassword()
+    { login.enterEmail().sendKeys("wrong@example.com");
+        login.enterPassword().sendKeys("P@ssw0rd"); }
+
+    @And("user press on login button")
+    public void clickOnLogin()
+    { login.pressLoginButton(); }
+
+    @Then("user could not login to the system")
+    public void loginUnsuccessfully()
+    { softAssert.assertTrue(login.errorMessage().getText().contains("Login was unsuccessful"));
+
+        login.errorColor();
+    }
 
 }
