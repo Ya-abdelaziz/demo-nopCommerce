@@ -70,8 +70,9 @@ public class P01_register {
         return Hooks.driver.findElement(By.id("register-button"));
     }
 
-    public WebElement successMessage() {
-        return Hooks.driver.findElement(By.className("result"));
+    public void successMessage() {
+       Boolean message =  Hooks.driver.findElement(By.className("result")).getText().contains("Your registration completed");
+         softAssert.assertTrue(message);
     }
 
     public void ColorOfSuccessMessage() {
@@ -81,5 +82,7 @@ public class P01_register {
         String colorHEX = Color.fromString(colorRbg).asHex();
         softAssert.assertEquals(colorHEX, "#4cb17c");
     }
+
+
 
 }

@@ -16,10 +16,10 @@ public class D02_loginStepDef {
       public void clickLogin()
        { login.clickOnLoginButton(); }
 
-    @When("user login with \"valid\" email \"test@example.com\" and password \"P@ssw0rd\"")
-      public void EnterValidEmailAndPassword()
-        { login.enterEmail().sendKeys("test@example.com");
-          login.enterPassword().sendKeys("P@ssw0rd"); }
+    @When("^user login with \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\"$")
+      public void EnterValidEmailAndPassword( String type,String email, String password)
+        { login.enterEmail().sendKeys(email);
+          login.enterPassword().sendKeys(password); }
 
     @And("user press on login button")
       public void clickOnLogin()
@@ -29,11 +29,6 @@ public class D02_loginStepDef {
      public void loginToSystemSuccessfully()
        { login.URL();
          login.myAccountTab();}
-
-    @When("user login with \"invalid\" email \"wrong@example.com\" and password \"P@ssw0rd\"")
-    public void EnterInValidEmailAndPassword()
-    { login.enterEmail().sendKeys("wrong@example.com");
-        login.enterPassword().sendKeys("P@ssw0rd"); }
 
 
     @Then("user could not login to the system")

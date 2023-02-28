@@ -34,7 +34,7 @@ public class D01_registerStepDef {
 
       @And("user enter email \"test@example.com\" field")
        public void userEnterEmail()
-       { register.enterEmail("test222@example.com"); }
+       { register.enterEmail("test33344555@example.com"); }
 
       @And("user fills Password fields \"P@ssw0rd\" \"P@ssw0rd\"")
        public void userEnterPassword()
@@ -47,7 +47,7 @@ public class D01_registerStepDef {
 
       @Then("success message is displayed")
         public void successMessageAppear()
-         { softAssert.assertTrue(register.successMessage().getText().contains("Your registration completed"));
+         { register.successMessage();
 
            register.ColorOfSuccessMessage();
            softAssert.assertAll();
