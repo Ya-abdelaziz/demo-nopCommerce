@@ -10,37 +10,30 @@ import java.util.List;
 
 public class P03_homePage {
 
-    public void selectEuro()
-      {
-          Select select = new Select(Hooks.driver.findElement(By.id("customerCurrency")));
-         select.selectByVisibleText("Euro");
-       //  return Hooks.driver.findElement(By.id("customerCurrency"));
-      }
+    public void selectEuro() {
+        Select select = new Select(Hooks.driver.findElement(By.id("customerCurrency")));
+        select.selectByVisibleText("Euro");
+        //  return Hooks.driver.findElement(By.id("customerCurrency"));
+    }
 
-    public void verify()
-    {
-      List<WebElement> euroSign = Hooks.driver.findElements(By.xpath("//*[@class='price actual-price']"));
-       int size = euroSign.size();
+    public void verifyEuroSign() {
+        List<WebElement> euroSign = Hooks.driver.findElements(By.xpath("//*[@class='price actual-price']"));
+        int size = euroSign.size();
 
-      //  System.out.println(size);
-      //  System.out.println(euroSign);
+        //  System.out.println(size);
+        //  System.out.println(euroSign);
 
-      for (int i = 0; i < size; i++)
-             {
-                 String sign = euroSign.get(i).getText();
+        for (int i = 0; i < size; i++) {
+            String sign = euroSign.get(i).getText();
 
-               //  System.out.println(sign);
+            //  System.out.println(sign);
 
-                 Assert.assertTrue(sign.contains("€"));
+            Assert.assertTrue(sign.contains("€"));
 
-             }
+        }
 
 
     }
-
-
-
-
 
 
 }
