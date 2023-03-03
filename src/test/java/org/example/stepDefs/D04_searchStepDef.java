@@ -40,7 +40,11 @@ public class D04_searchStepDef {
     public void searchBySku()
     {
       search.NumOfResults();
+      search.clickOnProduct().click();
+      search.getSku();
     }
+
+
 
 
 

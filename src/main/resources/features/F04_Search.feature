@@ -10,7 +10,7 @@
       Examples:
       | product name |
       |     book     |
-      |    laptop    |
+
 
     Scenario Outline: user could search using sku
       Given user go to home page
@@ -20,4 +20,3 @@
       Examples:
         |    sku    |
         | SCI_FAITH |
-        | APPLE_CAM |

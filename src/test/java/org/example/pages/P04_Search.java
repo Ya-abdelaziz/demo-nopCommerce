@@ -46,11 +46,22 @@ public class P04_Search {
                    softAssert.assertEquals(resultText,searchBarText);
                    softAssert.assertAll();
                }
-
-
-
+    }
+    public WebElement clickOnProduct()
+    {
+      return Hooks.driver.findElement(By.className("picture"));
     }
 
+    public void getSku()
+    {
+
+       String skuResult = Hooks.driver.findElement(By.className("value")).getText();
+       // System.out.println(skuResult);
+        String skuSearch = Hooks.driver.findElement(By.id("q")).getText();
+        //  System.out.println(skuSearch);
+
+        Assert.assertEquals(skuSearch,skuResult);
+    }
 
 
 
