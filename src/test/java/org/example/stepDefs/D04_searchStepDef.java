@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.pages.P04_Search;
+import org.openqa.selenium.WebElement;
 
 public class D04_searchStepDef {
     P04_Search search = new P04_Search();
@@ -28,17 +29,19 @@ public class D04_searchStepDef {
     }
 
     @Then("searching By product name should be successful")
-    public void searchByProductName ()
+    public void searchByProductName()
     {
         search.NumOfResults();
+        search.searchSuccessText();
 
     }
 
     @Then("searching By Sku should be successful")
-    public void searchBySku ()
+    public void searchBySku()
     {
       search.NumOfResults();
     }
+
 
 
 }

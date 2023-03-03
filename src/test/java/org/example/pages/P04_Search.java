@@ -34,6 +34,23 @@ public class P04_Search {
         System.out.println(size);
 
     }
+    public void searchSuccessText()
+    {
+        String searchBarText = Hooks.driver.findElement(By.id("small-searchterms")).getText();
+      List<WebElement> result_text = Hooks.driver.findElements(By.className("product-title"));
+       int numOfElements = result_text.size();
+               for (int j=0; j < numOfElements; j++)
+               {
+                 String resultText = result_text.get(j).getText().toLowerCase();
+
+                   softAssert.assertEquals(resultText,searchBarText);
+                   softAssert.assertAll();
+               }
+
+
+
+    }
+
 
 
 
