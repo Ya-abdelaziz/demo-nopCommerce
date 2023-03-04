@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.pages.P04_Search;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class D04_searchStepDef {
@@ -18,12 +19,16 @@ public class D04_searchStepDef {
 
     @When("^user enters (.*)$")
     public void searchbar(String data)
+
     {
+
         search.searchBar().sendKeys(data);
     }
 
     @And("user clicks on search button")
+
     public void clickSearch()
+
     {
         search.searchButton();
     }

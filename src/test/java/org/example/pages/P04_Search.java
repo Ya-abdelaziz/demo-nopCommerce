@@ -22,7 +22,9 @@ public class P04_Search {
 
      return Hooks.driver.findElement(By.id("small-searchterms"));
     }
-    public void searchButton() {
+
+    public void searchButton()
+    {
        Hooks.driver.findElement(By.xpath("//*[@class='button-1 search-box-button']")).click();
     }
 
@@ -39,6 +41,7 @@ public class P04_Search {
         String searchBarText = Hooks.driver.findElement(By.id("small-searchterms")).getText();
       List<WebElement> result_text = Hooks.driver.findElements(By.className("product-title"));
        int numOfElements = result_text.size();
+
                for (int j=0; j < numOfElements; j++)
                {
                  String resultText = result_text.get(j).getText().toLowerCase();
@@ -47,7 +50,7 @@ public class P04_Search {
                    softAssert.assertAll();
                }
     }
-    public WebElement clickOnProduct()
+ public WebElement clickOnProduct()
     {
       return Hooks.driver.findElement(By.className("picture"));
     }
@@ -62,6 +65,8 @@ public class P04_Search {
 
         Assert.assertEquals(skuSearch,skuResult);
     }
+
+
 
 
 
