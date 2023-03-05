@@ -21,17 +21,13 @@ public class D05_hoverCategoriesStepDef {
      hoverCategories.selectRandomSubCategory();
    }
 
-   @And("User gets text of the page title")
+   @Then("User gets text of the page title")
     public void PageTitle()
    {
     hoverCategories.pageTitle();
    }
 
-   @Then("verify")
-    public void ireqa()
-   {
 
-   }
 
 
 
